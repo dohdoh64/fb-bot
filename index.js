@@ -26,11 +26,6 @@ app.get('/webhook/', function (req, res) {
 	res.send('Error, wrong token')
 })
 
-// Spin up the server
-app.listen(app.get('port'), function() {
-	console.log('running on port', app.get('port'))
-})
-
 app.post('/webhook/', function (req, res) {
     let messaging_events = req.body.entry[0].messaging
     for (let i = 0; i < messaging_events.length; i++) {
@@ -45,3 +40,8 @@ app.post('/webhook/', function (req, res) {
 })
 
 const token = "EAAOfgVXvdvcBAKKPsJEB4CLjPoul1KxlLhVgRzZBbz6g0OWZCyy7PChbGY8zCk35CTfBLM7GMdWuZAZBiuyLCFQ6vfyjZBtChK4jZBLdowoh11J2o4aHFQ9ecBpofs1hp9L8wir65mkW7upZBOEDIkTW6u1vX7PnYjAboyXLkQa7AZDZD"
+
+// Spin up the server
+app.listen(app.get('port'), function() {
+	console.log('running on port', app.get('port'))
+})
