@@ -1,2 +1,0 @@
-# fb-bot
-fb-bot
